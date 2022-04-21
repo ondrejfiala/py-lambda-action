@@ -18,9 +18,9 @@ install_zip_dependencies(){
 	find ./python -name "__pycache__" -type d | xargs rm -rf
 	
 	# Removing nonessential files
-	find python -name '*.so' -type f -exec strip "{}" \;
-	find python -wholename "*/tests/*" -type f -delete
-	find python -regex '^.*\(__pycache__\|\.py[co]\)$' -delete
+	find ./python -name '*.so' -type f -exec strip "{}" \;
+	find ./python -wholename "*/tests/*" -type f -delete
+	find ./python -regex '^.*\(__pycache__\|\.py[co]\)$' -delete
 	zip -r dependencies.zip ./python
 	ls -l
 }

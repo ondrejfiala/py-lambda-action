@@ -13,6 +13,8 @@ install_zip_dependencies(){
 	rm -r ./python/pip*
 	rm -r ./python/pkg_resources*
 	rm -r ./python/setuptools*
+	rm -r ./python/pandas*
+	rm -r ./python/numpy*
 	find ./python -name "tests" -type d | xargs rm -rf
 	find ./python -name "docs" -type d | xargs rm -rf
 	find ./python -name "__pycache__" -type d | xargs rm -rf

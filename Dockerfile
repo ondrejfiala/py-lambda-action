@@ -1,7 +1,8 @@
 FROM python:3.10-alpine
 
-RUN apt-get update
-RUN apt-get install -y jq zip git openssh-client
+RUN apk update && \
+RUN apk add git openssh 
+RUN apk install jq zip
 RUN pip install awscli
 
 ADD entrypoint.sh /entrypoint.sh

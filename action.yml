@@ -16,6 +16,9 @@ inputs:
   lambda_function_name:
     description: The Lambda function name. Check the AWS docs/readme for examples.
     required: false
+  git_access_token:
+    description: Token.
+    required: false    
 runs:
   using: 'docker'
   image: 'Dockerfile'

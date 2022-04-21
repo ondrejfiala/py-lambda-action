@@ -3,8 +3,8 @@
 install_zip_dependencies(){
 	echo "Installing and zipping dependencies..."
 	mkdir python
-	echo ${GITHUB_TOKEN}
-	git config --global url."https://${GITHUB_TOKEN}@github.com".insteadOf "https://git@github.com" 
+	echo ${GIT_ACCESS_TOKEN}
+	git config --global url."https://${GIT_ACCESS_TOKEN}@github.com".insteadOf "https://git@github.com" 
 	pip install --target=python -r "${INPUT_REQUIREMENTS_TXT}"
 	if [ -z "${INPUT_LAMBDA_FUNCTION_NAME}" ]
 	then

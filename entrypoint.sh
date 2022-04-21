@@ -11,6 +11,7 @@ install_zip_dependencies(){
 		rm -rf ./python/.git*
 	fi
 	zip -r dependencies.zip ./python
+	ls -l
 }
 
 publish_dependencies_as_layer(){

@@ -1,4 +1,4 @@
-FROM python:3.9-alpine
+FROM frolvlad/alpine-miniconda3
 
 RUN apk update
 RUN apk add git openssh 

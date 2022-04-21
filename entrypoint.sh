@@ -3,11 +3,6 @@
 install_zip_dependencies(){
 	echo "Installing and zipping dependencies..."
 	mkdir python
-	git --version
-	python --version
-	echo "${INPUT_GIT_ACCESS_TOKEN}"
-	echo "huhu"
-	git config --global user.name "git"
 	git config --global url."https://${INPUT_GIT_ACCESS_TOKEN}@github.com".insteadOf "https://git@github.com" 
 	pip install --target=python -r "${INPUT_REQUIREMENTS_TXT}"
 	if [ -z "${INPUT_LAMBDA_FUNCTION_NAME}" ]

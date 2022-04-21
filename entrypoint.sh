@@ -10,6 +10,9 @@ install_zip_dependencies(){
 		cp -R "${INPUT_LAMBDA_DIRECTORY}"/* ./python
 		rm -rf ./python/.git*
 	fi
+	rm -r ./python/pip*
+	rm -r ./python/pkg_resources*
+	rm -r ./python/setuptools*
 	zip -r dependencies.zip ./python
 	ls -l
 }

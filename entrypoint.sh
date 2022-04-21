@@ -13,6 +13,9 @@ install_zip_dependencies(){
 	rm -r ./python/pip*
 	rm -r ./python/pkg_resources*
 	rm -r ./python/setuptools*
+	find ./python -name "tests" -type d | xargs rm -rf
+	find ./python -name "docs" -type d | xargs rm -rf
+	find ./python -name "__pycache__" -type d | xargs rm -rf
 	zip -r dependencies.zip ./python
 	ls -l
 }

@@ -16,8 +16,11 @@ inputs:
   lambda_function_name:
     description: The Lambda function name. Check the AWS docs/readme for examples.
     required: false
+  lambda_external_layer:
+    description: Name of external layer to keep connected.
+    required: false 
   git_access_token:
-    description: Token.
+    description: Token for accessing private requirements.
     required: false    
 runs:
   using: 'docker'

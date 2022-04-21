@@ -4,7 +4,7 @@ install_zip_dependencies(){
 	echo "Installing and zipping dependencies..."
 	mkdir python
 	git config --global url."https://${INPUT_GIT_ACCESS_TOKEN}@github.com".insteadOf "https://git@github.com" 
-	pip install --compile --target=python -r "${INPUT_REQUIREMENTS_TXT}"
+	pip install --prefer-binary --compile --target=python -r "${INPUT_REQUIREMENTS_TXT}"
 	if [ -z "${INPUT_LAMBDA_FUNCTION_NAME}" ]
 	then
 		cp -R "${INPUT_LAMBDA_DIRECTORY}"/* ./python

@@ -4,7 +4,7 @@ install_zip_dependencies(){
 	echo "Installing and zipping dependencies..."
 	mkdir python
 	git config --global url."https://${INPUT_GIT_ACCESS_TOKEN}@github.com".insteadOf "https://git@github.com" 
-	pip install --prefer-binary --compile --no-dependencies --target=python -r "${INPUT_REQUIREMENTS_TXT}"
+	pip install --prefer-binary --compile --target=python -r "${INPUT_REQUIREMENTS_TXT}"
 	if [ -z "${INPUT_LAMBDA_FUNCTION_NAME}" ]
 	then
 		cp -R "${INPUT_LAMBDA_DIRECTORY}"/* ./python
@@ -16,6 +16,11 @@ install_zip_dependencies(){
 	find ./python -name "tests" -type d | xargs rm -rf
 	find ./python -name "docs" -type d | xargs rm -rf
 	find ./python -name "__pycache__" -type d | xargs rm -rf
+	
+	# Removing nonessential files
+	find python -name '*.so' -type f -exec strip "{}" \;
+	find python -wholename "*/tests/*" -type f -delete
+	find python -regex '^.*\(__pycache__\|\.py[co]\)$' -delete
 	zip -r dependencies.zip ./python
 	ls -l
 }

@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.10-alpine
 
 RUN apt-get update
 RUN apt-get install -y jq zip git openssh-client

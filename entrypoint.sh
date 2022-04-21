@@ -3,6 +3,7 @@
 install_zip_dependencies(){
 	echo "Installing and zipping dependencies..."
 	mkdir python
+	git --version
 	python --version
 	git config --global user.name "git"
 	pip install --target=python -r "${INPUT_REQUIREMENTS_TXT}"

@@ -10,18 +10,18 @@ install_zip_dependencies(){
 		cp -R "${INPUT_LAMBDA_DIRECTORY}"/* ./python
 		rm -rf ./python/.git*
 	fi
+	
+	# Removing biggest packages loaded from different layer
 	rm -r ./python/pip*
 	rm -r ./python/pkg_resources*
 	rm -r ./python/setuptools*
 	rm -r ./python/pandas*
 	rm -r ./python/numpy*
-	find ./python -name "tests" -type d | xargs rm -rf
-	find ./python -name "docs" -type d | xargs rm -rf
-	find ./python -name "__pycache__" -type d | xargs rm -rf
 	
 	# Removing nonessential files
 	find ./python -name '*.so' -type f -exec strip "{}" \;
 	find ./python -wholename "*/tests/*" -type f -delete
+	find ./python -wholename "*/docs/*" -type f -delete
 	find ./python -regex '^.*\(__pycache__\|\.py[co]\)$' -delete
 	zip -r dependencies.zip ./python
 	ls -l

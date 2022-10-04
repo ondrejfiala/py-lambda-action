@@ -15,8 +15,8 @@ install_zip_dependencies(){
 	rm -r ./python/pip*
 	rm -r ./python/pkg_resources*
 	rm -r ./python/setuptools*
-	rm -r ./python/pandas*
-	rm -r ./python/numpy*
+	#rm -r ./python/pandas*
+	#rm -r ./python/numpy*
 	
 	# Removing nonessential files
 	find ./python -name '*.so' -type f -exec strip "{}" \;

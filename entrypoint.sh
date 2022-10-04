@@ -19,7 +19,7 @@ install_zip_dependencies(){
 	#rm -r ./python/numpy*
 	
 	# Removing nonessential files
-	find ./python -name '*.so' -type f -exec strip "{}" \;
+	#find ./python -name '*.so' -type f -exec strip "{}" \;
 	find ./python -wholename "*/tests/*" -type f -delete
 	find ./python -wholename "*/docs/*" -type f -delete
 	find ./python -regex '^.*\(__pycache__\|\.py[co]\)$' -delete

@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:4.10.3-alpine
+FROM continuumio/miniconda3:23.3.1-0
 
 RUN apk update
 RUN apk add jq zip bash git

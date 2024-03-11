@@ -1,4 +1,4 @@
-FROM ondrejfiala/bootstrap:2.1.4
+FROM continuumio/miniconda3:24.1.2-0
 #FROM continuumio/miniconda3:23.3.1-0-alpine
 
 RUN apk update

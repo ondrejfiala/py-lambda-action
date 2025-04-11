@@ -12,6 +12,8 @@ install_zip_dependencies(){
 	fi
 	
 	# Removing biggest packages loaded from different layer
+ 	rm -r ./python/boto3*
+   	rm -r ./python/botocore*
 	rm -r ./python/pip*
 	rm -r ./python/pkg_resources*
 	rm -r ./python/setuptools*

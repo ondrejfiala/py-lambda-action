@@ -1,4 +1,4 @@
-FROM ondrejfiala/bootstrap:2.2.2
+FROM ondrejfiala/bootstrap:2.3.3
 #FROM frolvlad/alpine-miniconda3:latest
 #FROM ondrejfiala/bootstrap:2.1.4
 #FROM continuumio/miniconda3:23.3.1-0-alpine
